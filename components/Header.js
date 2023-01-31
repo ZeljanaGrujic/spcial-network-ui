@@ -12,8 +12,11 @@ import { MdOndemandVideo } from "react-icons/md";
 import { SlGameController } from "react-icons/sl";
 import { CgMenuGridO } from "react-icons/cg";
 import { AiOutlineMessage, AiOutlineBell } from "react-icons/ai";
+import { useSession } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 
 const Header = () => {
+  const { data: session } = useSession();
   return (
     <div className="bg-white flex items-center shadow-md p-2 top-0 sticky z-50 h-16">
       <div className="flex min-w-fit">
@@ -38,7 +41,7 @@ const Header = () => {
           </div>
 
           <div className="flex items-center h-14 px-4 md:px-10 rounded-md md:hover:bg-gray-100 cursor-pointer">
-            <BsFlag className="mx-auto" size={20}></BsFlag>
+            <BsFlag className="mx-auto text-green-800" size={20}></BsFlag>
           </div>
 
           <div className="flex items-center h-14 px-4 md:px-10 rounded-md md:hover:bg-gray-100 cursor-pointer">
@@ -50,37 +53,38 @@ const Header = () => {
           </div>
 
           <div className="flex items-center h-14 px-4 md:px-10 rounded-md md:hover:bg-gray-100 cursor-pointer">
-            <SlGameController className="mx-auto" size={22}></SlGameController>
+            <SlGameController className="mx-auto text-blue-900" size={22}></SlGameController>
           </div>
         </div>
       </div>
       <div className="flex items-center justify-end min-w-fit space-x-2">
         <Image
-          src="https://thumbs.dreamstime.com/b/social-media-network-logo-vector-illustration-five-people-group-forum-to-share-ideas-116810481.jpg"
-          height={90}
-          width={60}
+          src={session?.user.image}
+          height={40}
+          width={40}
+          className="rounded-full cursor-pointer"
+          onClick={() => signOut()}
         ></Image>
         <p className="hidden xl:inline-flex font-semibold text-sm whitespace-nowrap p-3 max-w-xs">
           {" "}
-          Logged user{" "}
+          Logged user {session?.user.name}{" "}
         </p>
         <CgMenuGridO
           size={5}
           className="hidden lg:inline-flex h-10 w-10 bg-gray-200 text-gray-600 rounded-full p-2 cursor-pointer hover:bg-gray-800"
         ></CgMenuGridO>
 
-
-<AiOutlineMessage
+        <AiOutlineMessage
           size={5}
           className="hidden lg:inline-flex h-10 w-10 bg-gray-200 text-gray-600 rounded-full p-2 cursor-pointer hover:bg-gray-800"
         ></AiOutlineMessage>
 
-<AiOutlineBell
+        <AiOutlineBell
           size={5}
           className="hidden lg:inline-flex h-10 w-10 bg-gray-200 text-gray-600 rounded-full p-2 cursor-pointer hover:bg-gray-800"
         ></AiOutlineBell>
 
-<FcExpand
+        <FcExpand
           size={5}
           className="hidden lg:inline-flex h-10 w-10 bg-gray-200 text-gray-600 rounded-full p-2 cursor-pointer hover:bg-gray-800"
         ></FcExpand>

@@ -3,6 +3,8 @@ import Image from "next/image";
 import Header from "components/Header";
 import Sidebar from "components/Sidebar";
 import Head from "next/head";
+import Feed from "./Feed";
+import RightSidebar from "./RightSidebar";
 
 export default function Login() {
   const { data: session } = useSession();
@@ -10,7 +12,7 @@ export default function Login() {
     return (
       <>
         <div className="flex items-center justify-end min-w-fit space-x-2">
-          Signed in as {session.user.email} <br />
+          Signed in with {session.user.email} email <br />
           <button
             className="rounded text-white font-semibold bg-red-400 hover:bg-red-700 py-2 px-6"
             onClick={() => signOut()}
@@ -24,6 +26,8 @@ export default function Login() {
         <Header></Header>
         <main className="flex bg-gray-100">
           <Sidebar></Sidebar>
+          <Feed></Feed>
+          <RightSidebar></RightSidebar>
         </main>
       </>
     );
