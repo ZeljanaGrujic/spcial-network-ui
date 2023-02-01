@@ -37,9 +37,9 @@ export default function Login() {
       <div className="flex flex-col items-center mx-auto">
         <Image
           src="https://thumbs.dreamstime.com/b/social-media-network-logo-vector-illustration-five-people-group-forum-to-share-ideas-116810481.jpg"
-          alt="Login logo"
           height={240}
           width={240}
+          alt="Login logo"
         ></Image>
         <div className="text-red-600 font-semibold">
           You are not signed in! <br />

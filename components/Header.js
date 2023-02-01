@@ -24,6 +24,7 @@ const Header = () => {
           src="https://thumbs.dreamstime.com/b/social-media-network-logo-vector-illustration-five-people-group-forum-to-share-ideas-116810481.jpg"
           height={90}
           width={60}
+          alt="logo image"
         ></Image>
         <div className="flex items-center space-x-2 px-2 ml-2 rounded-full bg-gray-100 text-gray-500">
           <FcSearch size={20}></FcSearch>
@@ -64,6 +65,7 @@ const Header = () => {
           width={40}
           className="rounded-full cursor-pointer"
           onClick={() => signOut()}
+          alt="header image"
         ></Image>
         <p className="hidden xl:inline-flex font-semibold text-sm whitespace-nowrap p-3 max-w-xs">
           {" "}

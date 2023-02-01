@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
   images: {
     domains: [
       "img.favpng.com",
@@ -10,6 +9,7 @@ const nextConfig = {
       "www.thebalancemoney.com",
     ],
   },
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;

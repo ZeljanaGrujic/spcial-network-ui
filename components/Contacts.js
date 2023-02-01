@@ -9,6 +9,7 @@ const Contacts = ({ name, src }) => {
         height={40}
         width={40}
         className="rounded-full cursor-pointer"
+        alt="contacts image"
       ></Image>
       <p className="hidden sm:inline-flex text-sm text-gray-500 cursor-pointer">{name}</p>
     </div>
